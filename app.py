@@ -1,28 +1,19 @@
 from flask import Flask
-### WSGI Application
+
 app = Flask(__name__)
 
-
-## Decorator WIth path
 @app.route('/')
 def welcome():
-    return "Welcome to My FLask APP new changes after debug True"
-
-@app.route('/members')
-def members():
-    return "Welcome to Members  new changes after debug True"
+    return "Welcome"
 
 
-# @app.route('/')
-# def welcome():
-#     return "Welcome to My FLask APP new changes after debug True"
+@app.route('/success/<int:score>')
+def score(score):
+    return "The Person has success with Socre "+ str(score)
 
-
-# @app.route('/')
-# def welcome():
-#     return "Welcome to My FLask APP new changes after debug True"
-
-
+@app.route('/fail/<int:score>')
+def fail(score):
+    return "The Person has fail with Socre "+ str(score)
 
 if __name__=='__main__':
     app.run(debug=True)
