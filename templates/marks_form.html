@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Student Marks</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #6a11cb, #89f7fe);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-container {
+            background: #ffffff;
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+        }
+        .form-container h1 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .form-container p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .student-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .student-row label {
+            flex: 1;
+            font-weight: bold;
+            text-align: left;
+        }
+        .student-row input {
+            flex: 2;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+        .submit-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .submit-button button {
+            background: #2575fc;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-button button:hover {
+            background: #1b5dc8;
+        }
+        .marquee {
+            background: linear-gradient(to bottom, #22d918, #89f7fe);
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .marquee p {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+            font-size: 1.2em;
+            color: red;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="marquee">
+            <p><strong>Purpose:</strong> This project will take the score of each subject and calculate the average. If the average score is greater than <strong>30</strong>, you pass; otherwise, you fail.</p>
+        </div>
+        <h1>Submit Marks for Subjects</h1>
+        <form action="/submit-marks" method="POST">
+            <div class="student-row">
+                <label for="student1">Subject 1:</label>
+                <input type="number" id="student1" name="student1_marks" placeholder="Enter marks" required>
+            </div>
+            <div class="student-row">
+                <label for="student2">Subject 2:</label>
+                <input type="number" id="student2" name="student2_marks" placeholder="Enter marks" required>
+            </div>
+            <div class="student-row">
+                <label for="student3">Subject 3:</label>
+                <input type="number" id="student3" name="student3_marks" placeholder="Enter marks" required>
+            </div>
+            <div class="submit-button">
+                <button type="submit">Submit Marks</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
